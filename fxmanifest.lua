@@ -6,14 +6,14 @@ description 'ESX Fishing'
 
 client_scripts {
 	'@es_extended/locale.lua',
-	'locales/*.lua'
+	'locales/*.lua',
 	'config.lua',
 	'client/main.lua'
 } 
 
 server_scripts {
 	'@es_extended/locale.lua',
-	'locales/*.lua'
+	'locales/*.lua',
 	'config.lua',
 	'server/main.lua'
 }

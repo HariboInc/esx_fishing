@@ -64,7 +64,7 @@ function FishGUI(bool)
 	else
 		BarAnimation = BarAnimation + Config.AnimationSpeed
 	end
-	text(0.4,0.05,0.35, (_U('fishing_1')))
+	text(0.4,0.05,0.35, (TranslateCap('fishing_1')))
 end
 
 function PlayAnim(ped,base,sub,nr,time) 
@@ -109,21 +109,21 @@ AddEventHandler('esx_fishing:startFishing', function()
 					end
 
 					IsFishing = true
-					if Config.ShowChatMSG then ESX.ShowNotification(_U('fishing_2')) end
+					if Config.ShowChatMSG then ESX.ShowNotification(TranslateCap('fishing_2')) end
 					RunCodeOnly1Time = true
 					BarAnimation = 0
 
 				else
-					ESX.ShowNotification(_U('fishing_3'))
+					ESX.ShowNotification(TranslateCap('fishing_3'))
 				end
 			else
-				ESX.ShowNotification(_U('fishing_noaccess'))
+				ESX.ShowNotification(TranslateCap('fishing_noaccess'))
 			end
 		else
-			ESX.ShowNotification(_U('fishing_noaccess'))
+			ESX.ShowNotification(TranslateCap('fishing_noaccess'))
 		end
 	else
-		ESX.ShowNotification(_U('fishing_4'))
+		ESX.ShowNotification(TranslateCap('fishing_4'))
 	end
 end)
 
@@ -164,13 +164,13 @@ Citizen.CreateThread(function()
 				StopAnimTask(GetPed(), 'amb@world_human_stand_fishing@idle_a','idle_c',2.0)
 				Citizen.Wait(200)
 				DeleteEntity(FishRod)
-				if Config.ShowChatMSG then ESX.ShowNotification(_U('fishing_escape')) end
+				if Config.ShowChatMSG then ESX.ShowNotification(TranslateCap('fishing_escape')) end
 			end
 			if IsControlJustPressed(1, 38) then
 				if BarAnimation >= Config.SuccessLimit then
 					CFish = false
 					TimerAnimation = 0.1
-					if Config.ShowChatMSG then ESX.ShowNotification(_U('fishing_5')) end
+					if Config.ShowChatMSG then ESX.ShowNotification(TranslateCap('fishing_5')) end
 					StopAnimTask(GetPed(), 'amb@world_human_stand_fishing@idle_a','idle_c',2.0)
 					Citizen.Wait(200)
 					DeleteEntity(FishRod)
@@ -183,7 +183,7 @@ Citizen.CreateThread(function()
 					StopAnimTask(GetPed(), 'amb@world_human_stand_fishing@idle_a','idle_c',2.0)
 					Citizen.Wait(200)
 					DeleteEntity(FishRod)
-					if Config.ShowChatMSG then ESX.ShowNotification(_U('fishing_escape')) end
+					if Config.ShowChatMSG then ESX.ShowNotification(TranslateCap('fishing_escape')) end
 				end
 			end
 		end

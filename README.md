@@ -11,7 +11,7 @@ You still need to add a fishing rod and bait to any of the shops in your server.
 
 *** For the old language system ***
 Open the config file and replace.
-> Config.Locale = GetConvar('esx:locale', 'en')
+> Config.Locale = GetConvar('esx:locale', 'en') <
 to
 > Config.Locale = 'en'
 

@@ -1,17 +1,19 @@
-ESX                    = nil
-
 local IsFishing, CFish = false, false
 local BarAnimation, Faketimer = 0, 0
 local RunCodeOnly1Time = true
 local PosX = 0.5
 local PosY, TimerAnimation = 0.1, 0.1
 
-Citizen.CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
-	end
-end)
+if Config.OldEsx == true then
+	ESX = nil
+ 
+	Citizen.CreateThread(function()
+	  while ESX == nil do
+		 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+		 Citizen.Wait(0)
+	  end
+	end)
+ end
 
 function GetCar() return GetVehiclePedIsIn(GetPlayerPed(-1), false) end
 

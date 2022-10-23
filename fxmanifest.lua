@@ -4,16 +4,18 @@ game 'gta5'
 
 description 'ESX Fishing'
 
-client_scripts {
+shared_scripts {
+	'@es_extended/imports.lua',
 	'@es_extended/locale.lua',
+	'config.lua'
+}
+
+client_scripts {
 	'locales/*.lua',
-	'config.lua',
 	'client/main.lua'
 } 
 
 server_scripts {
-	'@es_extended/locale.lua',
 	'locales/*.lua',
-	'config.lua',
 	'server/main.lua'
 }

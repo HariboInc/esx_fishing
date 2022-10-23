@@ -1,6 +1,7 @@
-ESX = nil
-
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+if Config.OldEsx == true then
+    ESX = nil
+    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+ end
 
 RegisterServerEvent('esx_fishing:caughtFish')
 AddEventHandler('esx_fishing:caughtFish', function()
